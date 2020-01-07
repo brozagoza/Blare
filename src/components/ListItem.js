@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+import { Text, TouchableWithoutFeedback, View, AsyncStorage } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import { CardSection } from './common';
+
+class ListItem extends Component {
+
+    onRowPress() {
+        AsyncStorage.setItem('CONTACTS_SELECTED', this.props.input);
+        Actions.contactEdit();
+    }
+
+    render() {
+        const { input } = this.props;
+
+        return (
+            <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+                <View>
+                    <CardSection>
+                        <Text style={styles.titleStyle}>
+                            {input}
+                        </Text>
+                    </CardSection>
+                </View>
+            </TouchableWithoutFeedback>
+        );
+    }
+}
+
+const styles = {
+    titleStyle: {
+        fontSize: 18,
+        paddingLeft: 15
+    }
+};
+
+export default ListItem;

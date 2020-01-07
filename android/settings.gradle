@@ -1,0 +1,15 @@
+rootProject.name = 'Blare'
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':react-native-ble-manager'
+project(':react-native-ble-manager').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ble-manager/android')
+include ':react-native-ble-plx'
+project(':react-native-ble-plx').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ble-plx/android')
+//include ':react-native-twilio'
+//project(':react-native-twilio').projectDir = new File(settingsDir,
+//  '../node_modules/react-native-twilio/android')
+//include ':RCTTwilioChat', ':app'
+//project(':RCTTwilioChat').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-twilio-chat/android')
+include ':react-native-sms-android'
+project(':react-native-sms-android').projectDir = new File(settingsDir, '../node_modules/react-native-sms-android/android')
+include ':app'
